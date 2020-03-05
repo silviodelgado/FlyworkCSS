@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flywork CSS Playground</title>
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="css/main.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Flywork CSS</h1>
+        <div class="row">
+            <div class="col-sm-6">
+                <h3>Checkboxes</h3>
+                <div class="form-group">
+                    <div class="flywork-checkbox">
+                        <input type="checkbox" id="chk1">
+                        <label for="chk1">Option 1</label>
+                        <input type="checkbox" id="chk2" checked>
+                        <label for="chk2">Option 2</label>
+                        <input type="checkbox" id="chk3">
+                        <label for="chk3">Option 3</label>
+                    </div>
+                    <div class="flywork-checkbox">
+                        <input type="checkbox" id="chk4">
+                        <label for="chk4">Option 4</label>
+                        <input type="checkbox" id="chk5" disabled>
+                        <label for="chk5">Option 5</label>
+                        <input type="checkbox" id="chk6" disabled>
+                        <label for="chk6">Option 6</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <h3>Radio Buttons</h3>
+                <div class="form-group">
+                    <div class="flywork-radio">
+                        <input type="radio" id="rb1" name="grp1">
+                        <label for="rb1">Option 1</label>
+                        <input type="radio" id="rb2" name="grp1" checked>
+                        <label for="rb2">Option 2</label>
+                        <input type="radio" id="rb3" name="grp1">
+                        <label for="rb3">Option 3</label>
+                    </div>
+                    <div class="flywork-radio">
+                        <input type="radio" id="rb4" name="grp2">
+                        <label for="rb4">Option 4</label>
+                        <input type="radio" id="rb5" name="grp2" disabled>
+                        <label for="rb5">Option 5</label>
+                        <input type="radio" id="rb6" name="grp2" disabled>
+                        <label for="rb6">Option 6</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h3>Floating Labels</h3>
+        <div class="flywork-labels">
+            <div class="form-group mb-4 mt-4">
+                <input type="text" id="txt1" class="form-control"><span class="bar"></span>
+                <label for="txt1">Your Name</label>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group mb-4">
+                        <input type="email" id="txt2" class="form-control" disabled><span class="bar"></span>
+                        <label for="txt2">Your Email</label>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group mb-4">
+                        <input type="email" id="txt3" class="form-control" value="disabled@with.value" disabled><span
+                            class="bar"></span>
+                        <label for="txt3">Current Email</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group mb-4">
+                        <input type="text" id="txt4" class="form-control" value="+55 21 98765-4321" readonly><span
+                            class="bar"></span>
+                        <label for="txt4">Phone Number</label>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group mb-4">
+                        <select id="cmb1" class="form-control">
+                            <option></option>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                            <option value="4">Option 4</option>
+                        </select><span class="bar"></span>
+                        <label for="cmb1">Select an option</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group mb-4">
+                <textarea id="txtArea1" class="form-control" rows="4"></textarea><span class="bar"></span>
+                <label for="txtArea1">Message</label>
+            </div>
+            <div class="form-group mb-4 mt-5">
+                <textarea id="txtArea1" class="form-control" rows="4"></textarea><span class="bar"></span>
+                <label for="txtArea1" class="double-line">Message test<br>Label with two lines</label>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/flywork.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

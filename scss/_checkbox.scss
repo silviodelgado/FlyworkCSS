@@ -1,0 +1,89 @@
+/*!
+Flywork Checkbox
+Author: Interart.com
+*/
+.flywork-checkbox {
+    >[type="checkbox"] {
+        position: absolute;
+        //left: -9999px;
+        opacity: 0;
+
+        &:focus,
+        &:hover {
+            +label {
+                color: $fly-label-active-color;
+
+                &:before {
+                    border-color: rgba(38, 143, 255, .5);
+                    /*#999;*/
+                    background-color: #efefef;
+                }
+
+                &.checked:before {
+                    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
+                    border-color: lighten($fly-checked-hover-border-color, 10);
+                }
+            }
+        }
+
+        +label {
+            position: relative;
+            cursor: pointer;
+            height: $fly-height;
+            line-height: $fly-height;
+            font-size: $fly-font-size;
+            display: inline-block;
+            padding: $fly-padding;
+
+            &:hover {
+                color: $fly-label-active-color;
+            }
+
+            &:before {
+                content: " ";
+                display: inline-block;
+                cursor: pointer;
+                width: $fly-open-w;
+                height: $fly-open-h;
+                border: 2px solid #666;
+                border-radius: 2px;
+                background-color: #fff;
+                transition: .2s;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 0;
+            }
+
+            &.checked:before {
+                content: " ";
+                display: inline-block;
+                width: $fly-checked-w;
+                height: $fly-checked-h;
+                border: 4px solid $fly-checked-border-color;
+                border-width: 0 3px 3px 0;
+                background-color: transparent;
+                border-radius: 0;
+                transform: rotate(40deg);
+                transition: .2s;
+                position: absolute;
+                top: -2px;
+                left: 5px;
+                z-index: 0;
+            }
+
+        }
+
+        &[disabled] {
+            &+label {
+                color: #bbb;
+                cursor: not-allowed;
+
+                &:before {
+                    border-color: #aaa;
+                    cursor: not-allowed;
+                }
+            }
+        }
+    }
+}

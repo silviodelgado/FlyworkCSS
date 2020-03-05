@@ -1,0 +1,215 @@
+/*!
+Flywork Floating Labels
+Author: Interart.com
+*/
+@keyframes flywork-label-animated-in {
+    from {
+        top: $fly-top-inactive;
+    }
+
+    to {
+        top: $fly-top-active;
+    }
+}
+
+@keyframes flywork-label-animated-out {
+    from {
+        top: $fly-top-active;
+    }
+
+    to {
+        top: $fly-top-inactive;
+    }
+}
+
+.flywork-labels {
+    .form-group {
+        position: relative;
+        margin-bottom: 1rem;
+
+        .form-control {
+            border: 1px solid #cecece;
+            z-index: 10;
+            border-width: 0 0 1px 0;
+            border-radius: 0;
+            line-height: 45px;
+            height: 45px;
+            padding: 0;
+            margin-bottom: 0;
+            text-overflow: ellipsis;
+
+            &+.bar {
+                position: relative;
+                display: block;
+
+                &:before,
+                &:after {
+                    content: '';
+                    height: 3px;
+                    width: 0;
+                    bottom: 1px;
+                    position: absolute;
+                    background-color: $fly-bar-color;
+                    transition: 0.3s ease all;
+                }
+
+                &:before {
+                    left: 50%;
+                }
+
+                &:after {
+                    right: 50%;
+                }
+            }
+
+            &:focus {
+                outline: none;
+                box-shadow: none;
+                border-color: transparent;
+
+                &~.bar:before,
+                &~.bar:after {
+                    width: 50%;
+                }
+            }
+
+            &~label {
+                position: absolute;
+                z-index: 9;
+                left: 0;
+                cursor: pointer;
+                display: inline-block;
+                border: 1px solid transparent;
+                border-radius: .25rem;
+                padding-left: .25rem;
+                top: $fly-top-inactive;
+                font-size: $fly-font-size-inactive;
+                color: $fly-label-inactive-color;
+                animation: flywork-label-animated-out 0.3s;
+
+                &.no-float {
+                    top: $fly-top-active;
+                    font-size: $fly-font-size-active;
+                    color: $fly-label-active-color;
+                }
+
+                &.active {
+                    top: $fly-top-active;
+                    font-size: $fly-font-size-active;
+                    color: $fly-label-active-color;
+                    padding-left: 0;
+                    animation: flywork-label-animated-in 0.3s;
+                }
+            }
+
+            &:not([value]):not(:focus)[readonly] {
+                &~label {
+                    padding-left: 10px;
+                }
+            }
+
+            &:focus,
+            &:required:valid,
+            &:required:not(:valid)[value]:not([value=""]),
+            &[rows]:not(:empty),
+            &[value]:not([value=""]):not(:required),
+            &[value]:not([value=""])[disabled],
+            &[value][readonly] {
+
+                &~label {
+                    top: $fly-top-active;
+                    font-size: $fly-font-size-active;
+                    color: $fly-label-active-color;
+                    padding-left: 0;
+                    animation: flywork-label-animated-in 0.3s;
+
+                    &.double-line {
+                        top: ($fly-top-active * 1.5);
+                    }
+                }
+            }
+
+            &[value]:not([value=""])[disabled],
+            &[value]:not([value=""])[readonly] {
+                padding-left: .3rem;
+                padding-right: .3rem;
+            }
+
+            &[type="date"],
+            &[type="datetime-local"],
+            &[type="email"],
+            &[type="month"],
+            &[type="number"],
+            &[type="password"],
+            &[type="search"],
+            &[type="tel"],
+            &[type="text"],
+            &[type="time"],
+            &[type="url"] {
+                padding-left: .3rem;
+                padding-right: .3rem;
+            }
+
+
+            &:required:valid,
+            &:required:not(:valid) {
+                &~label {
+                    &:after {
+                        content: " *";
+                        color: #f00;
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            &[disabled],
+            &[readonly] {
+                background: rgba(0, 0, 0, 0.05);
+                //background: linear-gradient(0deg, rgba(235, 235, 235, 1) 0%, rgba(245, 245, 245, 1) 13%, rgba(255, 255, 255, 1) 52%, rgba(255, 255, 255, 1) 100%);
+
+                ~label {
+                    cursor: not-allowed;
+                }
+            }
+
+            &[disabled] {
+                cursor: not-allowed;
+            }
+
+            /* *
+            &:placeholder-shown {
+                &~label {
+                    display: none;
+                }
+            }
+            
+            &:not(:placeholder-shown) {
+                &~label {
+                    top: $label-top-with-content;
+                    font-size: 12px;
+                    color: #77c;
+                    animation: flywork-label-animated-in 0.3s;
+                }
+            }
+            /* */
+        }
+
+        textarea {
+            &.form-control {
+                height: auto;
+                min-height: 60px;
+                padding-top: 10px;
+                line-height: 25px;
+                padding-left: .3rem;
+                padding-right: .3rem;
+            }
+        }
+
+    }
+
+    &>.form-group {
+        &:first-child {
+            margin-top: 20px;
+        }
+    }
+}
