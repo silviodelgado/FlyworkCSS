@@ -2,11 +2,9 @@
 * Flywork CSS Components
 * Author: Interart.com
 * ================================*/
-/* radio & checkbox */
-/* labels */
 /*!
-Flywork Checkbox
-Author: Interart.com
+* Flywork Checkbox
+* Author: Interart.com
 */
 .flywork-checkbox > [type="checkbox"] {
   position: absolute;
@@ -77,8 +75,8 @@ Author: Interart.com
 }
 
 /*!
-Flywork Radiobuttons
-Author: Interart.com
+* Flywork Radiobuttons
+* Author: Interart.com
 */
 .flywork-radio [type="radio"] {
   position: absolute;
@@ -149,8 +147,8 @@ Author: Interart.com
 }
 
 /*!
-Flywork Floating Labels
-Author: Interart.com
+* Flywork Floating Labels
+* Author: Interart.com
 */
 @keyframes flywork-label-animated-in {
   from {

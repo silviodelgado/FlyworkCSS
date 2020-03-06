@@ -4,7 +4,7 @@
     } else if (typeof exports === 'object') {
         module.exports = factory(root);
     } else {
-        root.flywork = factory(root);
+        root.Flywork = factory(root);
     }
 })(typeof global !== "undefined" ? global : this.window || this.global, function (root) {
     'use strict';
