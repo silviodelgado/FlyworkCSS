@@ -10,4 +10,3 @@ Custom frontend components for web applications
 ## Roadmap
 
 * Remove jQuery dependency
-* Remove Bootstrap dependency
