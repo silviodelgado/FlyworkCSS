@@ -9,40 +9,40 @@
 })(typeof global !== "undefined" ? global : this.window || this.global, function (root) {
     'use strict';
 
-    var chk = document.querySelectorAll('.flywork-checkbox [type="checkbox"]');
+    const chk = document.querySelectorAll('.flywork-checkbox [type="checkbox"]');
     chk.forEach(function (el, i) {
-        var id = el.getAttribute('id');
+        const id = el.getAttribute('id');
         el.addEventListener('change', function (evt) {
-            var lbl = document.querySelectorAll('label[for="' + id + '"]');
-            lbl[0].classList.toggle('checked');
+            let lbl = document.querySelector('label[for="' + id + '"]');
+            lbl.classList.toggle('checked');
         });
     });
 
-    var rb = document.querySelectorAll('.flywork-radio [type="radio"]');
+    const rb = document.querySelectorAll('.flywork-radio [type="radio"]');
     rb.forEach(function (el, i) {
         el.addEventListener('change', function (evt) {
-            var name = this.getAttribute('name');
-            var id = this.getAttribute('id');
+            const name = this.getAttribute('name');
+            const id = this.getAttribute('id');
 
-            var inputs = document.querySelectorAll('input[name="' + name + '"]');
+            let inputs = document.querySelectorAll('input[name="' + name + '"]');
             inputs.forEach(function (item, j) {
-                var el_id = item.getAttribute('id');
+                const el_id = item.getAttribute('id');
                 item.removeAttribute('checked');
-                var lbl = document.querySelector('label[for="' + el_id + '"]');
+                let lbl = document.querySelector('label[for="' + el_id + '"]');
                 lbl.classList.remove('checked');
             });
 
-            var el = document.querySelector('#' + id);
+            let el = document.querySelector('#' + id);
             el.setAttribute('checked', true);
-            var lbl = document.querySelector('label[for="' + id + '"]');
+            let lbl = document.querySelector('label[for="' + id + '"]');
             lbl.classList.add('checked');
         });
     });
 
-    var elems = document.querySelectorAll('.flywork-radio [type="radio"]:checked, .flywork-checkbox [type="checkbox"]:checked');
+    let elems = document.querySelectorAll('.flywork-radio [type="radio"]:checked, .flywork-checkbox [type="checkbox"]:checked');
     elems.forEach(function (el, i) {
-        var el_id = el.getAttribute('id');
-        var lbl = document.querySelector('label[for="' + el_id + '"]');
+        const el_id = el.getAttribute('id');
+        let lbl = document.querySelector('label[for="' + el_id + '"]');
         lbl.classList.add('checked');
     });
 
