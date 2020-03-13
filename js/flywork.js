@@ -11,8 +11,8 @@
 
     const flywork_init = function () {
 
-        let chk = document.querySelectorAll('.flywork-checkbox [type="checkbox"]');
-        let rb = document.querySelectorAll('.flywork-radio [type="radio"]');
+        let chk = document.querySelectorAll('.flywork-checkbox [type="checkbox"]:not(.fly)');
+        let rb = document.querySelectorAll('.flywork-radio [type="radio"]:not(.fly)');
         let elems = document.querySelectorAll('.flywork-radio [type="radio"]:checked, .flywork-checkbox [type="checkbox"]:checked');
 
         chk.forEach(function (el, i) {
@@ -21,6 +21,7 @@
                 let lbl = document.querySelectorAll('label[for="' + id + '"]');
                 lbl[0].classList.toggle('checked');
             });
+            el.classList.add('fly');
         });
 
         rb.forEach(function (el, i) {
@@ -41,6 +42,7 @@
                 let lbl = document.querySelector('label[for="' + id + '"]');
                 lbl.classList.add('checked');
             });
+            el.classList.add('fly');
         });
 
         elems.forEach(function (el, i) {
