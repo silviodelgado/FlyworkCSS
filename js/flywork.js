@@ -1,3 +1,9 @@
+/*!
+ * Flywork v1.5 - Vanilla Javascript custom frontend fancy components for web applications
+ * Copyright 2019 Silvio Delgado (https://github.com/silviodelgado)
+ * Licensed under MIT (https://opensource.org/licenses/MIT)
+ * https://github.com/silviodelgado/FlyworkCSS
+*/
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
         define([], factory(root));
@@ -22,11 +28,10 @@
         let elems = document.querySelectorAll('.flywork-radio [type="radio"]:checked, .flywork-checkbox [type="checkbox"]:checked');
 
         chk.forEach(function (el, i) {
-            let id = el.getAttribute('id');
             el.addEventListener('change', function (evt) {
-                let lbl = document.querySelector('label[for="' + id + '"]');
+                let lbl = document.querySelector('label[for="' + el.id + '"]');
                 lbl.classList.toggle('checked');
-                document.getElementById(id)[this.checked ? 'setAttribute' : 'removeAttribute']('checked', this.checked ? 'checked' : null);
+                document.getElementById(el.id)[this.checked ? 'setAttribute' : 'removeAttribute']('checked', this.checked ? 'checked' : null);
             });
             el.classList.add('fly');
         });
@@ -53,8 +58,7 @@
         });
 
         elems.forEach(function (el, i) {
-            let el_id = el.getAttribute('id');
-            let lbl = document.querySelector('label[for="' + el_id + '"]');
+            let lbl = document.querySelector('label[for="' + el.id + '"]');
             lbl.classList.add('checked');
         });
 
@@ -86,7 +90,19 @@
 
     }
 
+    const refresh = () => {
+        let elems = document.querySelectorAll('.flywork-radio [type="radio"]:checked, .flywork-checkbox [type="checkbox"]:checked');
+        elems.forEach(function (el, i) {
+            let lbl = document.querySelector('label[for="' + el.id + '"]');
+            if (el.checked)
+                lbl.classList.add('checked');
+            else
+                lbl.classList.remove('checked');
+        });
+    };
+
     return {
-        init: flywork_init
+        init: flywork_init,
+        refresh
     }
 });
