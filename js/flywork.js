@@ -1,5 +1,5 @@
 /*!
- * Flywork v1.5 - Vanilla Javascript custom frontend fancy components for web applications
+ * Flywork v1.6 - Vanilla Javascript custom frontend fancy components for web applications
  * Copyright 2019 Silvio Delgado (https://github.com/silviodelgado)
  * Licensed under MIT (https://opensource.org/licenses/MIT)
  * https://github.com/silviodelgado/FlyworkCSS
@@ -90,10 +90,13 @@
 
     }
 
-    const refresh = () => {
-        let elems = document.querySelectorAll('.flywork-radio [type="radio"]:checked, .flywork-checkbox [type="checkbox"]:checked');
+    const refresh_labels = (context) => {
+        let selector = '.flywork-radio [type="radio"],.flywork-checkbox [type="checkbox"]';
+        let elems = (context || document).querySelectorAll(selector);
         elems.forEach(function (el, i) {
             let lbl = document.querySelector('label[for="' + el.id + '"]');
+            console.log('el', el);
+            console.log('el.chk', el.checked);
             if (el.checked)
                 lbl.classList.add('checked');
             else
@@ -103,6 +106,6 @@
 
     return {
         init: flywork_init,
-        refresh
+        refreshLabels: refresh_labels
     }
 });
