@@ -95,8 +95,6 @@
         let elems = (context || document).querySelectorAll(selector);
         elems.forEach(function (el, i) {
             let lbl = document.querySelector('label[for="' + el.id + '"]');
-            console.log('el', el);
-            console.log('el.chk', el.checked);
             if (el.checked)
                 lbl.classList.add('checked');
             else
