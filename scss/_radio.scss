@@ -25,6 +25,18 @@
             }
         }
 
+        &.no {
+            &-required {
+                label {
+                    &.required {
+                        &::after {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+
         +label {
             position: relative;
             cursor: pointer;
@@ -84,6 +96,12 @@
                     cursor: not-allowed;
                 }
             }
+        }
+    }
+
+    label {
+        &:last-child {
+            margin-right: 0;
         }
     }
 }

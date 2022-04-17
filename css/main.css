@@ -10,18 +10,23 @@
   position: absolute;
   opacity: 0;
 }
+
 .flywork-checkbox > [type="checkbox"]:focus + label, .flywork-checkbox > [type="checkbox"]:hover + label {
   color: #1976c2;
 }
+
 .flywork-checkbox > [type="checkbox"]:focus + label:before, .flywork-checkbox > [type="checkbox"]:hover + label:before {
   border-color: rgba(38, 143, 255, 0.5);
   /*#999;*/
   background-color: #efefef;
 }
+
 .flywork-checkbox > [type="checkbox"]:focus + label.checked:before, .flywork-checkbox > [type="checkbox"]:hover + label.checked:before {
-  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
+          box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
   border-color: #7ad250;
 }
+
 .flywork-checkbox > [type="checkbox"] + label {
   position: relative;
   cursor: pointer;
@@ -31,9 +36,11 @@
   display: inline-block;
   padding: 0 0 0 26px;
 }
+
 .flywork-checkbox > [type="checkbox"] + label:hover {
   color: #1976c2;
 }
+
 .flywork-checkbox > [type="checkbox"] + label:before {
   content: " ";
   display: inline-block;
@@ -43,12 +50,14 @@
   border: 2px solid #666;
   border-radius: 2px;
   background-color: #fff;
+  -webkit-transition: .2s;
   transition: .2s;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 0;
 }
+
 .flywork-checkbox > [type="checkbox"] + label.checked:before {
   content: " ";
   display: inline-block;
@@ -58,17 +67,21 @@
   border-width: 0 3px 3px 0;
   background-color: transparent;
   border-radius: 0;
-  transform: rotate(40deg);
+  -webkit-transform: rotate(40deg);
+          transform: rotate(40deg);
+  -webkit-transition: .2s;
   transition: .2s;
   position: absolute;
   top: -2px;
   left: 5px;
   z-index: 0;
 }
+
 .flywork-checkbox > [type="checkbox"][disabled] + label {
   color: #bbb;
   cursor: not-allowed;
 }
+
 .flywork-checkbox > [type="checkbox"][disabled] + label:before {
   border-color: #aaa;
   cursor: not-allowed;
@@ -82,17 +95,26 @@
   position: absolute;
   opacity: 0;
 }
+
 .flywork-radio [type="radio"]:focus + label, .flywork-radio [type="radio"]:hover + label {
   color: #1976c2;
 }
+
 .flywork-radio [type="radio"]:focus + label:before, .flywork-radio [type="radio"]:hover + label:before {
   border-color: #999;
   background-color: #f0f0f0;
 }
+
 .flywork-radio [type="radio"]:focus + label.checked:before, .flywork-radio [type="radio"]:hover + label.checked:before {
-  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
+          box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
   border-color: #7ad250;
 }
+
+.flywork-radio [type="radio"].no-required label.required::after {
+  display: none;
+}
+
 .flywork-radio [type="radio"] + label {
   position: relative;
   cursor: pointer;
@@ -103,9 +125,11 @@
   padding: 0 0 0 26px;
   margin-right: 15px;
 }
+
 .flywork-radio [type="radio"] + label:hover {
   color: #1976c2;
 }
+
 .flywork-radio [type="radio"] + label:before {
   content: " ";
   display: inline-block;
@@ -115,12 +139,14 @@
   border: 2px solid #666;
   border-radius: 50%;
   background-color: #fff;
+  -webkit-transition: .2s;
   transition: .2s;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 0;
 }
+
 .flywork-radio [type="radio"] + label.checked:before {
   content: " ";
   display: inline-block;
@@ -130,26 +156,42 @@
   border-width: 0 3px 3px 0;
   background-color: transparent;
   border-radius: 0;
-  transform: rotate(40deg);
+  -webkit-transform: rotate(40deg);
+          transform: rotate(40deg);
+  -webkit-transition: .2s;
   transition: .2s;
   position: absolute;
   top: -2px;
   left: 6px;
   z-index: 0;
 }
+
 .flywork-radio [type="radio"][disabled] + label {
   color: #bbb;
   cursor: not-allowed;
 }
+
 .flywork-radio [type="radio"][disabled] + label:before {
   border-color: #aaa;
   cursor: not-allowed;
+}
+
+.flywork-radio label:last-child {
+  margin-right: 0;
 }
 
 /*!
 * Flywork Floating Labels
 * Author: Interart.com
 */
+@-webkit-keyframes flywork-label-animated-in {
+  from {
+    top: 10px;
+  }
+  to {
+    top: -22px;
+  }
+}
 @keyframes flywork-label-animated-in {
   from {
     top: 10px;
@@ -158,6 +200,16 @@
     top: -22px;
   }
 }
+
+@-webkit-keyframes flywork-label-animated-out {
+  from {
+    top: -22px;
+  }
+  to {
+    top: 10px;
+  }
+}
+
 @keyframes flywork-label-animated-out {
   from {
     top: -22px;
@@ -166,10 +218,12 @@
     top: 10px;
   }
 }
+
 .flywork-labels .form-group {
   position: relative;
   margin-bottom: 1rem;
 }
+
 .flywork-labels .form-group .form-control {
   border: 1px solid #cecece;
   z-index: 10;
@@ -181,26 +235,28 @@
   margin-bottom: 0;
   text-overflow: ellipsis;
   /* *
-  &:placeholder-shown {
-      &~label {
-          display: none;
-      }
-  }
-  
-  &:not(:placeholder-shown) {
-      &~label {
-          top: $label-top-with-content;
-          font-size: 12px;
-          color: #77c;
-          animation: flywork-label-animated-in 0.3s;
-      }
-  }
-  /* */
+            &:placeholder-shown {
+                &~label {
+                    display: none;
+                }
+            }
+            
+            &:not(:placeholder-shown) {
+                &~label {
+                    top: $label-top-with-content;
+                    font-size: 12px;
+                    color: #77c;
+                    animation: flywork-label-animated-in 0.3s;
+                }
+            }
+            /* */
 }
+
 .flywork-labels .form-group .form-control + .bar {
   position: relative;
   display: block;
 }
+
 .flywork-labels .form-group .form-control + .bar:before, .flywork-labels .form-group .form-control + .bar:after {
   content: '';
   height: 3px;
@@ -208,22 +264,30 @@
   bottom: 1px;
   position: absolute;
   background-color: #6610f2;
+  -webkit-transition: 0.3s ease all;
   transition: 0.3s ease all;
 }
+
 .flywork-labels .form-group .form-control + .bar:before {
   left: 50%;
 }
+
 .flywork-labels .form-group .form-control + .bar:after {
   right: 50%;
 }
+
 .flywork-labels .form-group .form-control:focus {
   outline: none;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   border-color: transparent;
 }
-.flywork-labels .form-group .form-control:focus ~ .bar:before, .flywork-labels .form-group .form-control:focus ~ .bar:after {
+
+.flywork-labels .form-group .form-control:focus ~ .bar:before,
+.flywork-labels .form-group .form-control:focus ~ .bar:after {
   width: 50%;
 }
+
 .flywork-labels .form-group .form-control ~ label {
   position: absolute;
   z-index: 9;
@@ -236,55 +300,70 @@
   top: 10px;
   font-size: 16px;
   color: #495057;
-  animation: flywork-label-animated-out 0.3s;
+  -webkit-animation: flywork-label-animated-out 0.3s;
+          animation: flywork-label-animated-out 0.3s;
 }
+
 .flywork-labels .form-group .form-control ~ label.no-float {
   top: -22px;
   font-size: 14px;
   color: #1976c2;
 }
+
 .flywork-labels .form-group .form-control ~ label.active {
   top: -22px;
   font-size: 14px;
   color: #1976c2;
   padding-left: 0;
-  animation: flywork-label-animated-in 0.3s;
+  -webkit-animation: flywork-label-animated-in 0.3s;
+          animation: flywork-label-animated-in 0.3s;
 }
+
 .flywork-labels .form-group .form-control:not([value]):not(:focus)[readonly] ~ label {
   padding-left: 10px;
 }
+
 .flywork-labels .form-group .form-control:focus ~ label, .flywork-labels .form-group .form-control:required:valid ~ label, .flywork-labels .form-group .form-control:required:not(:valid)[value]:not([value=""]) ~ label, .flywork-labels .form-group .form-control[rows]:not(:empty) ~ label, .flywork-labels .form-group .form-control[value]:not([value=""]):not(:required) ~ label, .flywork-labels .form-group .form-control[value]:not([value=""])[disabled] ~ label, .flywork-labels .form-group .form-control[value][readonly] ~ label {
   top: -22px;
   font-size: 14px;
   color: #1976c2;
   padding-left: 0;
-  animation: flywork-label-animated-in 0.3s;
+  -webkit-animation: flywork-label-animated-in 0.3s;
+          animation: flywork-label-animated-in 0.3s;
 }
+
 .flywork-labels .form-group .form-control:focus ~ label.double-line, .flywork-labels .form-group .form-control:required:valid ~ label.double-line, .flywork-labels .form-group .form-control:required:not(:valid)[value]:not([value=""]) ~ label.double-line, .flywork-labels .form-group .form-control[rows]:not(:empty) ~ label.double-line, .flywork-labels .form-group .form-control[value]:not([value=""]):not(:required) ~ label.double-line, .flywork-labels .form-group .form-control[value]:not([value=""])[disabled] ~ label.double-line, .flywork-labels .form-group .form-control[value][readonly] ~ label.double-line {
   top: -33px;
 }
+
 .flywork-labels .form-group .form-control[value]:not([value=""])[disabled], .flywork-labels .form-group .form-control[value]:not([value=""])[readonly] {
   padding-left: .3rem;
   padding-right: .3rem;
 }
+
 .flywork-labels .form-group .form-control[type="date"], .flywork-labels .form-group .form-control[type="datetime-local"], .flywork-labels .form-group .form-control[type="email"], .flywork-labels .form-group .form-control[type="month"], .flywork-labels .form-group .form-control[type="number"], .flywork-labels .form-group .form-control[type="password"], .flywork-labels .form-group .form-control[type="search"], .flywork-labels .form-group .form-control[type="tel"], .flywork-labels .form-group .form-control[type="text"], .flywork-labels .form-group .form-control[type="time"], .flywork-labels .form-group .form-control[type="url"] {
   padding-left: .3rem;
   padding-right: .3rem;
 }
+
 .flywork-labels .form-group .form-control:required:valid ~ label:after, .flywork-labels .form-group .form-control:required:not(:valid) ~ label:after {
   content: " *";
   color: #f00;
   font-weight: bold;
 }
+
 .flywork-labels .form-group .form-control[disabled], .flywork-labels .form-group .form-control[readonly] {
   background: rgba(0, 0, 0, 0.05);
 }
+
 .flywork-labels .form-group .form-control[disabled] ~ label, .flywork-labels .form-group .form-control[readonly] ~ label {
   cursor: not-allowed;
 }
+
 .flywork-labels .form-group .form-control[disabled] {
   cursor: not-allowed;
 }
+
 .flywork-labels .form-group textarea.form-control {
   height: auto;
   min-height: 60px;
@@ -293,6 +372,8 @@
   padding-left: .3rem;
   padding-right: .3rem;
 }
+
 .flywork-labels > .form-group:first-child {
   margin-top: 20px;
 }
+/*# sourceMappingURL=main.css.map */
