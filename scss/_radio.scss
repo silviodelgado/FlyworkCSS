@@ -86,7 +86,8 @@
 
         }
 
-        &[disabled] {
+        &[disabled],
+        &[readonly] {
             &+label {
                 color: #bbb;
                 cursor: not-allowed;

@@ -166,12 +166,12 @@
   z-index: 0;
 }
 
-.flywork-radio [type="radio"][disabled] + label {
+.flywork-radio [type="radio"][disabled] + label, .flywork-radio [type="radio"][readonly] + label {
   color: #bbb;
   cursor: not-allowed;
 }
 
-.flywork-radio [type="radio"][disabled] + label:before {
+.flywork-radio [type="radio"][disabled] + label:before, .flywork-radio [type="radio"][readonly] + label:before {
   border-color: #aaa;
   cursor: not-allowed;
 }
