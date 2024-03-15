@@ -1,0 +1,91 @@
+/*!
+* Flywork Switches
+* Author: Interart.com
+*/
+.flywork-switch {
+    position: relative;
+    height: 1.5rem;
+    line-height: 1.5rem;
+
+    & > [type="checkbox"] {
+        position: absolute;
+        opacity: 0;
+
+        & + label {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            // background-color: #1976c2;
+            // border: .2rem solid #1976c2;
+            background-color: #bbb;
+            border: .2rem solid #bbb;
+            width: 2.8rem;
+            height: 1.4rem;
+            margin-top: .4rem;
+            border-radius: 9999px;
+
+            &:hover {
+                background-color: #ccc;
+                border-color: #ccc;
+            }
+
+            &:before {
+                content: " ";
+                display: inline-block;
+                cursor: pointer;
+                width: 1rem;
+                height: 1rem;
+                border-radius: 9999px;
+                background-color: #fff;
+                transition: .2s;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 0;
+            }
+        }
+
+        &:focus,
+        &:hover {
+            & + label:before {
+                background-color: #eee;
+            }
+        }
+
+        &:checked {
+            & + label {
+                background-color: #1976c2;
+                border: .2rem solid #1976c2;
+
+                &:hover {
+                    background-color: #0966b2;
+                    border-color: #0966b2;
+                }
+
+                &:before {
+                    left: 1.4rem;
+                    transition: .3s;
+                }
+            }
+        }
+
+        &[disabled] {
+            & + label {
+                &,
+                &:hover {
+                    background-color: #ddd;
+                    border-color: #ddd;
+                    cursor: not-allowed;
+                }
+
+                &,
+                &:hover {
+                    &:before {
+                        background-color: #fff;
+                        cursor: not-allowed;
+                    }
+                }
+            }
+        }
+    }
+}

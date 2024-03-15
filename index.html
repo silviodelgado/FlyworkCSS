@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flywork CSS Playground</title>
     <link href="css/app.css" type="text/css" rel="stylesheet">
-    <link href="css/flywork.css" type="text/css" rel="stylesheet">
+    <link href="css/main.css" type="text/css" rel="stylesheet">
 </head>
 
 <body>
     <div class="container">
         <h1>Flywork CSS</h1>
         <div class="row">
-            <div class="col-6">
+            <div class="col col-4">
                 <h3>Checkboxes</h3>
                 <div class="form-group">
                     <div class="flywork-checkbox">
@@ -29,12 +29,12 @@
                         <label for="chk4">Option 4</label>
                         <input type="checkbox" id="chk5" disabled>
                         <label for="chk5">Option 5</label>
-                        <input type="checkbox" id="chk6" disabled>
+                        <input type="checkbox" id="chk6" checked disabled>
                         <label for="chk6">Option 6</label>
                     </div>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col col-4">
                 <h3>Radio Buttons</h3>
                 <div class="form-group">
                     <div class="flywork-radio">
@@ -50,8 +50,39 @@
                         <label for="rb4">Option 4</label>
                         <input type="radio" id="rb5" name="grp2" disabled>
                         <label for="rb5">Option 5</label>
-                        <input type="radio" id="rb6" name="grp2" disabled>
+                        <input type="radio" id="rb6" name="grp2" checked disabled>
                         <label for="rb6">Option 6</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-4">
+                <h3>Switches</h3>
+                <div class="form-group">
+                    <label for="sw1">Default</label>
+                    <div class="flywork-switch">
+                        <input type="checkbox" id="sw1" name="sw1">
+                        <label for="sw1"></label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="sw2">Default Checked</label>
+                    <div class="flywork-switch">
+                        <input type="checkbox" id="sw2" name="sw2" checked>
+                        <label for="sw2"></label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="sw3">Default Disabled</label>
+                    <div class="flywork-switch">
+                        <input type="checkbox" id="sw3" name="sw3" disabled>
+                        <label for="sw3"></label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="sw4">Default Checked</label>
+                    <div class="flywork-switch">
+                        <input type="checkbox" id="sw4" name="sw4" disabled checked>
+                        <label for="sw4"></label>
                     </div>
                 </div>
             </div>
