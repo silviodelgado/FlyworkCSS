@@ -3,6 +3,18 @@
 * Author: Interart.com
 */
 .flywork-radio {
+    &.no {
+        &-required {
+            label {
+                &.required {
+                    &::after {
+                        display: none !important;
+                    }
+                }
+            }
+        }
+    }
+
     [type="radio"] {
         position: absolute;
         opacity: 0;
@@ -20,18 +32,6 @@
                 &.checked:before {
                     box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
                     border-color: lighten($fly-checked-hover-border-color, 10);
-                }
-            }
-        }
-
-        &.no {
-            &-required {
-                label {
-                    &.required {
-                        &::after {
-                            display: none;
-                        }
-                    }
                 }
             }
         }

@@ -71,6 +71,9 @@
 * Flywork Radiobuttons
 * Author: Interart.com
 */
+.flywork-radio.no-required label.required::after {
+  display: none !important;
+}
 .flywork-radio [type=radio] {
   position: absolute;
   opacity: 0;
@@ -85,9 +88,6 @@
 .flywork-radio [type=radio]:focus + label.checked:before, .flywork-radio [type=radio]:hover + label.checked:before {
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
   border-color: #7ad250;
-}
-.flywork-radio [type=radio].no-required label.required::after {
-  display: none;
 }
 .flywork-radio [type=radio] + label {
   position: relative;
@@ -300,7 +300,7 @@
 */
 .flywork-switch {
   position: relative;
-  height: 1.5rem;
+  /*height: 1.5rem;*/
   line-height: 1.5rem;
 }
 .flywork-switch > [type=checkbox] {
